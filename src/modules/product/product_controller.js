@@ -15,6 +15,7 @@ export const createProduct = async (req, res, next) => {
 
   const products = await product_model.create({
     mainImage: req.files?.mainImage.map(
+      // (e) => "https://apparel-store-node-git-main-shaabanhamdys-projects.vercel.app/" + e.path
       (e) => "http://localhost:5000/" + e.path
     ),
     subImages: req.files?.subImages.map(
